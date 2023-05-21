@@ -67,7 +67,9 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link className="font-medium">Blogs</Link>
+              <Link to="/blogs" className="font-medium">
+                Blogs
+              </Link>
             </li>
           </ul>
         </div>

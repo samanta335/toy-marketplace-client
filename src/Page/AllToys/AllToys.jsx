@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import AllToysTable from "./AllToysTable";
 
 const AllToys = () => {
-  // const [allToy, setAllToy] = useState([]);
+  const [allToy, setAllToy] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/toysData")
-  //     .then((res) => res.json())
-  //     .then((data) => setAllToy(data));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/allToys")
+      .then((res) => res.json())
+      .then((data) => setAllToy(data));
+  }, []);
 
   return (
     <div className="overflow-x-auto pt-5">
@@ -16,7 +16,6 @@ const AllToys = () => {
         <thead>
           <tr>
             <th>Seller Name</th>
-            <th>Image</th>
             <th>Name</th>
             <th>Category</th>
             <th>Price</th>

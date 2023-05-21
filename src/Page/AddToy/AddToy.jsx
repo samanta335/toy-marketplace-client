@@ -7,10 +7,10 @@ const AddToy = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm();
-  console.log(watch);
+  // console.log(watch);
 
   const onSubmit = (data) => {
     fetch("http://localhost:5000/addToy", {
@@ -32,7 +32,7 @@ const AddToy = () => {
         <label className="label">
           <input
             className="text-input"
-            {...register("Name")}
+            {...register("name")}
             placeholder="Name"
           />
         </label>
@@ -48,7 +48,7 @@ const AddToy = () => {
         <label className="label">
           <input
             className="text-input"
-            {...register("Seller-Name", { required: true })}
+            {...register("sellerName", { required: true })}
             placeholder="Seller Name"
           />
         </label>
@@ -57,6 +57,13 @@ const AddToy = () => {
             className="text-input"
             {...register("price", { required: true })}
             placeholder="Price"
+          />
+        </label>
+        <label className="label">
+          <input
+            className="text-input"
+            {...register("Quantity", { required: true })}
+            placeholder="Quantity"
           />
         </label>
         <label className="label">
@@ -81,7 +88,7 @@ const AddToy = () => {
           <input
             className="text-input"
             {...register("description")}
-            placeholder="description"
+            placeholder="Description"
           />
         </label>
         <div>
