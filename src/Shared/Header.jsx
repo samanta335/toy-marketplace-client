@@ -74,8 +74,8 @@ const Header = () => {
         <div className="navbar-end">
           {user?.email ? (
             <>
-              <Link className="mr-4 font-semibold" to="/addToy">
-                Add A Toy{" "}
+              <Link to="/addToy" className="mr-4 font-semibold">
+                Add A Toy
               </Link>
               <Link className="mr-72 font-semibold" to="/myToy">
                 My Toys
