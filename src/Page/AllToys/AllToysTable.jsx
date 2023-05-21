@@ -10,7 +10,7 @@ const AllToysTable = ({ toys }) => {
       <td>{price}</td>
       <td>{Quantity}</td>
       <hr />
-      <Link to="/toyDetails" className="text-purple-800">
+      <Link to="/Teddy/toyDetails" className="text-purple-800">
         View Details
       </Link>
     </tr>

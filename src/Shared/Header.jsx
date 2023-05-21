@@ -59,15 +59,17 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link className="font-medium"> Home</Link>
+              <Link to="/" className="font-medium">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/allToys" className="font-medium">
+              <Link to="/Teddy/allToys" className="font-medium">
                 All Toys
               </Link>
             </li>
             <li>
-              <Link to="/blogs" className="font-medium">
+              <Link to="/Teddy/blogs" className="font-medium">
                 Blogs
               </Link>
             </li>
@@ -76,10 +78,10 @@ const Header = () => {
         <div className="navbar-end">
           {user?.email ? (
             <>
-              <Link to="/addToy" className="mr-4 font-semibold">
+              <Link to="/Teddy/addToy" className="mr-4 font-semibold">
                 Add A Toy
               </Link>
-              <Link className="mr-72 font-semibold" to="/myToy">
+              <Link className="mr-72 font-semibold" to="/Teddy/myToy">
                 My Toys
               </Link>
               <button className="btn btn-primary" onClick={handleLogout}>
@@ -87,7 +89,7 @@ const Header = () => {
               </button>
             </>
           ) : (
-            <Link to="/login" className="btn btn-primary">
+            <Link to="/Teddy/login" className="btn btn-primary">
               Login
             </Link>
           )}

@@ -1,9 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+
+  const added = () => toast.success("Toy Added Done");
+
   const {
     register,
     handleSubmit,
@@ -93,12 +98,14 @@ const AddToy = () => {
         </label>
         <div>
           <input
+            onClick={added}
             className="submit-btn bg-purple-800 text-white mt-10 px-20 py-2"
             value="Added Toy"
             type="submit"
           />
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

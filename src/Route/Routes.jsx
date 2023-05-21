@@ -20,23 +20,23 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/login",
+        path: "/Teddy/login",
         element: <Login></Login>,
       },
       {
-        path: "/register",
+        path: "/Teddy/register",
         element: <Register></Register>,
       },
       {
-        path: "/allToys",
+        path: "/Teddy/allToys",
         element: <AllToys></AllToys>,
       },
       {
-        path: "/addToy",
+        path: "/Teddy/addToy",
         element: <AddToy></AddToy>,
       },
       {
-        path: "/toyDetails",
+        path: "/Teddy/toyDetails",
         element: (
           <PrivateRoute>
             <ViewDetails></ViewDetails>
