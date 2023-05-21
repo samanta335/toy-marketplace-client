@@ -10,7 +10,9 @@ const AllToysTable = ({ toys }) => {
       <td>{price}</td>
       <td>{Quantity}</td>
       <hr />
-      <Link to="/toysDetails">View Details</Link>
+      <Link to="/toyDetails" className="text-purple-800">
+        View Details
+      </Link>
     </tr>
   );
 };
