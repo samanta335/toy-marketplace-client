@@ -8,6 +8,7 @@ import AddToy from "../Page/AddToy/AddToy";
 import ViewDetails from "../Page/AllToys/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
+import Blogs from "../Page/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/Teddy/blogs",
+        element: <Blogs></Blogs>,
       },
       {
         path: "/Teddy/login",
