@@ -31,48 +31,58 @@ const AddToy = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 p-20 text-center gap-4">
+    <div className="grid grid-rows-1 p-20 text-center gap-4">
       <form onSubmit={handleSubmit(onSubmit)} className="">
         {errors.exampleRequired && <span>This field is required</span>}
         <label className="label">
           <input
-            className="text-input"
-            {...register("name")}
-            placeholder="Name"
-          />
-        </label>
-        <label className="label">
-          <input
-            className="text-input"
+            className="text-input input input-bordered"
             value={user?.email}
             {...register("postedBy")}
-            placeholder="your email"
+            placeholder="Your email"
             type="email"
           />
         </label>
         <label className="label">
           <input
-            className="text-input"
+            className="text-input input input-bordered"
             {...register("sellerName", { required: true })}
             placeholder="Seller Name"
           />
         </label>
         <label className="label">
           <input
-            className="text-input"
+            className="text-input input input-bordered"
+            {...register("name")}
+            placeholder="Toy Name"
+          />
+        </label>
+        <label className="label">
+          <input
+            className="text-input input input-bordered"
             {...register("price", { required: true })}
             placeholder="Price"
           />
         </label>
         <label className="label">
           <input
-            className="text-input"
+            className="text-input input input-bordered"
             {...register("Quantity", { required: true })}
             placeholder="Quantity"
           />
         </label>
-        <label className="label">
-          <select className="text-input" {...register("category")}>
+        {/* <label className="label">
+          <input
+            className="text-input input input-bordered"
+            {...register("rating", { required: true })}
+            placeholder="Rating"
+          />
+        </label> */}
+        <label className="label ">
+          <select
+            className="text-input input input-bordered"
+            {...register("category")}
+          >
             <option>Bear Teddy </option>
             <option>Cat Teddy</option>
             <option>Panda Teddy</option>
@@ -82,7 +92,7 @@ const AddToy = () => {
 
         <label className="label">
           <input
-            className="text-input"
+            className="text-input input input-bordered"
             {...register("image")}
             placeholder="image url"
             type="url"
@@ -91,7 +101,7 @@ const AddToy = () => {
 
         <label className="label">
           <input
-            className="text-input"
+            className="text-input input input-bordered"
             {...register("description")}
             placeholder="Description"
           />
@@ -100,7 +110,7 @@ const AddToy = () => {
           <input
             onClick={added}
             className="submit-btn bg-purple-800 text-white mt-10 px-20 py-2"
-            value="Added Toy"
+            value="Post Toy"
             type="submit"
           />
         </div>

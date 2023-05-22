@@ -81,14 +81,14 @@ const Header = () => {
               <Link to="/Teddy/addToy" className="mr-3 font-semibold">
                 Add A Toy
               </Link>
-              <Link className="mr-56 font-semibold" to="/Teddy/myToy">
+              <Link className="mr-56 font-semibold" to="/Teddy/myToys">
                 My Toys
               </Link>
               <img
-                onMouseOver={user?.name}
-                className="w-12 h-12 rounded-full mr-5"
+                className="w-10 h-10 rounded-full mr-5"
                 src="https://www.psypost.org/wp-content/uploads/2019/04/happy-smiling-attractive-businesswoman.jpg"
                 alt=""
+                title={user.displayName}
               />
               <button className="btn btn-primary" onClick={handleLogout}>
                 Logout

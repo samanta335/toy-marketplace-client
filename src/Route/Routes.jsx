@@ -9,6 +9,7 @@ import ViewDetails from "../Page/AllToys/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Blogs from "../Page/Blogs/Blogs";
+import MyToys from "../Page/MyToys/MyToys";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
             <ViewDetails></ViewDetails>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/Teddy/myToys",
+        element: <MyToys></MyToys>,
       },
     ],
   },

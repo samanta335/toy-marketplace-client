@@ -9,6 +9,7 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
+
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
@@ -33,6 +34,7 @@ const Login = () => {
               <hr />
               <form onSubmit={handleLogin}>
                 <p>{error}</p>
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>

@@ -14,7 +14,7 @@ const Register = () => {
     const password = form.password.value;
     console.log(name, email, password);
 
-    createUser(email, password)
+    createUser(name, email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
@@ -66,6 +66,16 @@ const Register = () => {
                     className="input input-bordered"
                   />
                 </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text"> Photo url</span>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="Photo url"
+                    className="input input-bordered"
+                  />
+                </div>
                 <div className="form-control mt-6">
                   <input
                     className="btn btn-primary"
@@ -76,7 +86,7 @@ const Register = () => {
               </form>
               <p className="my-4 text-center">
                 Already Have an Account?{" "}
-                <Link className="text-lime-600 font-bold" to="/login">
+                <Link className="text-lime-600 font-bold" to="/Teddy/login">
                   Login
                 </Link>{" "}
               </p>
