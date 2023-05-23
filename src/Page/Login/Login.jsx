@@ -1,31 +1,28 @@
-import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
 
 const Login = () => {
-  const [error, setError] = useState();
-  const { registation } = useContext(AuthContext);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const { logIn } = useContext(AuthContext);
+
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
-
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
-    registation(email, password)
+    logIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
         navigate(from, { replace: true });
       })
-      .then((error) => setError(error));
+      .catch((error) => console.log(error));
   };
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -38,8 +35,6 @@ const Login = () => {
               <h1 className="text-3xl text-semibold text-center">Login</h1>
               <hr />
               <form onSubmit={handleLogin}>
-                <p>{error}</p>
-
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -64,9 +59,9 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6">
                   <input
-                    type="submit"
-                    value="login"
                     className="btn btn-primary"
+                    type="submit"
+                    value="Login"
                   />
                 </div>
               </form>

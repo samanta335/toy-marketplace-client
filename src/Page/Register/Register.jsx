@@ -1,9 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-  const [errors, setErrors] = useState("");
   const { createUser } = useContext(AuthContext);
 
   const handleRegister = (event) => {
@@ -14,12 +13,12 @@ const Register = () => {
     const password = form.password.value;
     console.log(name, email, password);
 
-    createUser(name, email, password)
+    createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        console.log("created user", user);
       })
-      .then((error) => setErrors(error.message));
+      .catch((error) => console.log(error));
   };
   return (
     <div>
@@ -32,7 +31,6 @@ const Register = () => {
             <div className="card-body">
               <h1 className="text-3xl text-center font-bold">Register</h1>
               <form onSubmit={handleRegister}>
-                <p className="text-red-600">{errors}</p>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
@@ -88,7 +86,7 @@ const Register = () => {
                 Already Have an Account?{" "}
                 <Link className="text-lime-600 font-bold" to="/Teddy/login">
                   Login
-                </Link>{" "}
+                </Link>
               </p>
             </div>
           </div>
