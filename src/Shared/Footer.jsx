@@ -1,3 +1,5 @@
+import GoogleLogin from "../Page/GoogleLogin/GoogleLogin";
+
 const Footer = () => {
   return (
     <footer className="footer p-10 mt-28 bg-gray-500 text-neutral-content">
@@ -9,6 +11,12 @@ const Footer = () => {
         />
         <h2 className="text-2xl font-bold">Teddy-Toy Zone</h2>
         <p>Copyright © 2023 - All right reserved</p>
+        <a
+          className="underline text-blue-700 font-semibold"
+          href="https://www.amazon.com/MorisMos-Stuffed-Animals-Birthday-Childrens/dp/B0911ZRJGJ"
+        >
+          Click for buy Teddy
+        </a>
       </div>
       <div>
         <span className="footer-title ">Contact Information</span>
@@ -51,6 +59,7 @@ const Footer = () => {
               <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
             </svg>
           </a>
+          <GoogleLogin></GoogleLogin>
         </div>
       </div>
     </footer>

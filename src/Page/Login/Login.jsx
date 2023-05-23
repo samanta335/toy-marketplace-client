@@ -1,10 +1,14 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
 
 const Login = () => {
   const [error, setError] = useState();
   const { registation } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -18,6 +22,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .then((error) => setError(error));
   };
@@ -65,18 +70,9 @@ const Login = () => {
                   />
                 </div>
               </form>
+
               <hr />
-              <div>
-                <button className="btn btn-outline btn-secondary mb-5 ">
-                  <img
-                    className="w-10 bg-base-200"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR330sd5sAWmTeUmzV0fa9D3SR6hQOpz_b5csk3vB6gthElkC_NVPmg9_ZqCZK7IWt5VgQ&usqp=CAU"
-                    alt=""
-                  />{" "}
-                  Google Sign-in
-                </button>
-              </div>
-              <hr />
+              <GoogleLogin></GoogleLogin>
               <div>
                 <p className="text-sm">
                   Don't Have an account?{" "}
