@@ -5,11 +5,12 @@ import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
 import AllToys from "../Page/AllToys/AllToys";
 import AddToy from "../Page/AddToy/AddToy";
-import ViewDetails from "../Page/AllToys/ViewDetails/ViewDetails";
-import PrivateRoute from "./PrivateRoute";
+
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Blogs from "../Page/Blogs/Blogs";
 import MyToys from "../Page/MyToys/MyToys";
+import PrivateRoute from "./PrivateRoute";
+import Details from "../Page/AllToys/ViewDetails/Details";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
+        path: "/private",
+        element: <PrivateRoute></PrivateRoute>,
+      },
+      {
         path: "/Teddy/login",
         element: <Login></Login>,
       },
@@ -37,18 +42,20 @@ const router = createBrowserRouter([
         path: "/Teddy/allToys",
         element: <AllToys></AllToys>,
       },
+
+      // {
+      //   path: "/Teddy/details",
+      //   element: (
+      //     <PrivateRoute>
+      //       <Details></Details>
+      //     </PrivateRoute>
+      //   ),
+      // },
       {
         path: "/Teddy/addToy",
         element: <AddToy></AddToy>,
       },
-      {
-        path: "/Teddy/toyDetails",
-        element: (
-          <PrivateRoute>
-            <ViewDetails></ViewDetails>
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/Teddy/myToys",
         element: <MyToys></MyToys>,

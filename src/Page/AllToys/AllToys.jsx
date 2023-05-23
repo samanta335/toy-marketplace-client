@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import AllToysTable from "./AllToysTable";
+import { Link } from "react-router-dom";
+import Details from "./ViewDetails/Details";
 
 const AllToys = () => {
   const [allToy, setAllToy] = useState([]);
   const [searchName, setSearchName] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toy-zone-server-dusky.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => setAllToy(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/nameSearch/${searchName}`)
+    fetch(`https://toy-zone-server-dusky.vercel.app/nameSearch/${searchName}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToy(data);
@@ -36,17 +38,61 @@ const AllToys = () => {
         <table className="table table-compact w-full text-center ">
           <thead>
             <tr>
+              <th></th>
               <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Category</th>
               <th>Price</th>
               <th>Available Quantity</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="p-5">
-            {allToy.map((toys) => (
-              <AllToysTable key={toys._id} toys={toys}></AllToysTable>
+            {allToy.map((toys, index) => (
+              <tr key={toys._id}>
+                <td>{index + 1}</td>
+                <td>{toys.sellerName}</td>
+                <td>{toys.name}</td>
+                <td>{toys.category}</td>
+                <td>{toys.price}</td>
+                <td>{toys.Quantity}</td>
+                <hr />
+                <td>
+                  <label htmlFor="my-modal" className="btn">
+                    open modal
+                  </label>{" "}
+                  <input
+                    type="checkbox"
+                    id="my-modal"
+                    className="modal-toggle"
+                  />
+                  <div className="modal">
+                    <div className="modal-box">
+                      <h3 className="font-bold text-lg">{toys.name}</h3>
+                      <p className="py-4">
+                        Youve been selected for a chance to get one year of
+                        subscription to use Wikipedia for free!
+                      </p>
+                      <div className="modal-action">
+                        <label htmlFor="my-modal" className="btn">
+                          Yay!
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <Details toys={toys}></Details> */}
+                  {/* <Details toys={toys}> 
+                    <Link to="/Teddy/details">view Details </Link>
+                  </Details> */}
+                </td>
+              </tr>
+
+              // <AllToysTable
+              //   key={toys._id}
+              //   toys={toys}
+              //   index={index}
+              // ></AllToysTable>
             ))}
           </tbody>
           <hr />

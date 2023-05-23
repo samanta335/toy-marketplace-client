@@ -18,7 +18,7 @@ const AddToy = () => {
   // console.log(watch);
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://toy-zone-server-dusky.vercel.app/addToy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -32,7 +32,7 @@ const AddToy = () => {
 
   return (
     <div className="grid grid-rows-1 p-20 text-center gap-4">
-      <form onSubmit={handleSubmit(onSubmit)} className="">
+      <form onSubmit={handleSubmit(onSubmit)}>
         {errors.exampleRequired && <span>This field is required</span>}
         <label className="label">
           <input
@@ -84,7 +84,6 @@ const AddToy = () => {
             {...register("category")}
           >
             <option>Bear Teddy </option>
-            <option>Cat Teddy</option>
             <option>Panda Teddy</option>
             <option>Pikachu Teddy</option>
           </select>
