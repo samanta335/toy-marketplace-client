@@ -35,13 +35,19 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link>Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li tabIndex={0}>
-                <Link>All Toys</Link>
+                <Link to="/Teddy/allToys">All Toys</Link>
               </li>
               <li>
-                <Link>Blogs</Link>
+                <Link to="/Teddy/blogs">Blogs</Link>
+              </li>
+              <li>
+                <Link to="/Teddy/addToy"> Add A Toy</Link>
+              </li>
+              <li>
+                <Link to="/Teddy/myToys"> My Toys</Link>
               </li>
             </ul>
           </div>

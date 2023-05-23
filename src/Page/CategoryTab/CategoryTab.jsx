@@ -140,6 +140,11 @@ const CategoryTab = () => {
           alt=""
         />
       </div>
+      <div className="text-center mt-8">
+        <Link className="btn btn-secondary" to="/Teddy/ExtraSection">
+          See Many Kind Of Teddy
+        </Link>
+      </div>
     </div>
   );
 };

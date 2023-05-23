@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
-import MyToystable from "./MyToystable";
-
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
@@ -45,12 +43,29 @@ const MyToys = () => {
           </thead>
           <tbody className="p-5">
             {myToys.map((myToy, index) => (
-              <MyToystable
-                key={myToy._id}
-                myToy={myToy}
-                index={index}
-                // handleUpdate={handleUpdate}
-              ></MyToystable>
+              <tr key={myToy._id}>
+                <td>{index + 1}</td>
+                <td>{myToy.sellerName}</td>
+                {/* <td>{myToy.image}</td> */}
+                <td>{myToy.name}</td>
+                <td>{myToy.category}</td>
+                <td>{myToy.price} </td>
+                <td>{myToy.Quantity} </td>
+                <td>{myToy.description} </td>
+                <td>
+                  <label htmlFor="my-modal" className="btn btn-accent">
+                    Update
+                  </label>
+                </td>
+                <td className="btn btn-error">Delete</td>
+              </tr>
+
+              // <MyToystable
+              //   key={myToy._id}
+              //   myToy={myToy}
+              //   index={index}
+              //   handleUpdate={handleUpdate}
+              // ></MyToystable>
 
               // {/* <Link onClick={handleUpdate}>Update</Link> */}
               // {/* <UpdateToy

@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import AllToysTable from "./AllToysTable";
-import { Link } from "react-router-dom";
-import Details from "./ViewDetails/Details";
 
 const AllToys = () => {
   const [allToy, setAllToy] = useState([]);
@@ -59,8 +56,8 @@ const AllToys = () => {
                 <td>{toys.Quantity}</td>
                 <hr />
                 <td>
-                  <label htmlFor="my-modal" className="btn">
-                    open modal
+                  <label htmlFor="my-modal" className="btn btn-primary">
+                    View Details
                   </label>{" "}
                   <input
                     type="checkbox"

@@ -10,7 +10,8 @@ import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Blogs from "../Page/Blogs/Blogs";
 import MyToys from "../Page/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
-import Details from "../Page/AllToys/ViewDetails/Details";
+// import Details from "../Page/AllToys/ViewDetails/Details";
+import ExtraSection from "../Page/Extra/ExtraSection";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/Teddy/allToys",
         element: <AllToys></AllToys>,
+      },
+      {
+        path: "/Teddy/ExtraSection",
+        element: <ExtraSection></ExtraSection>,
       },
 
       // {
