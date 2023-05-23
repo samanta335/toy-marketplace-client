@@ -6,8 +6,6 @@ import GoogleLogin from "../GoogleLogin/GoogleLogin";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
 
-  const from = location.state?.from?.pathname || "/";
-
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,7 +16,6 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };
